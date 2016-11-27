@@ -58,7 +58,9 @@ class PostController extends Controller
 
         $post->fill($input)->save();
 
-        return redirect()->route('post.index');
+        return redirect()
+            ->route('post.index')
+            ->with('success', 'L\'article a bien été ajouté.');
     }
 
     /**
@@ -113,7 +115,8 @@ class PostController extends Controller
         $input = $request->input();
         $post->fill($input)->save();
 
-        return redirect()->route('post.show', $id);
+        return redirect()->route('post.show', $id)
+            ->with('success', 'L\'article a bien été modifié.');
     }
 
     /**
@@ -128,6 +131,8 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect()->route('post.index');
+        return redirect()
+            ->route('post.index')
+            ->with('success', 'L\'article a bien été supprimé.');
     }
 }
