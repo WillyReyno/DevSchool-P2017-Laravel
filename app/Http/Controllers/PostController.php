@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        // Doit retourner la liste des articles
     }
 
     /**
@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        // Doit retourner le formulaire de création des articles
     }
 
     /**
@@ -34,7 +34,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Doit enregistrer un nouvel article depuis un formulaire
     }
 
     /**
@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        // Doit retourner la page d'un article spécifique
     }
 
     /**
@@ -56,7 +56,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Doit retourner le formulaire d'édition d'un article spécifique
     }
 
     /**
@@ -68,7 +68,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Doit enregistrer les modifications faites à un article
     }
 
     /**
@@ -79,6 +79,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Doit supprimer un article spécifique
     }
 }
