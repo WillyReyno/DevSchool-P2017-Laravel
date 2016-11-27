@@ -83,7 +83,11 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Doit enregistrer les modifications faites à un article
+        $post = Post::findOrFail($id);
+        $input = $request->input();
+        $post->fill($input)->save();
+
+        return redirect()->route('post.show', $id);
     }
 
     /**
