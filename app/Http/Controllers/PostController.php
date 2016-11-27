@@ -39,7 +39,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // Doit enregistrer un nouvel article depuis un formulaire
+        $post = new Post;
+        $input = $request->input();
+        $input['user_id'] = Auth::user()->id;
+
+        $post->fill($input)->save();
+
+        return redirect()->route('post.index');
     }
 
     /**
