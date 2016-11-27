@@ -15,6 +15,15 @@
 
                         <br>
                         <a href="{{ route('post.edit', $post->id) }}" class="btn btn-success">Modifier</a>
+
+                        {!! Form::model($post, [
+                        'route' => ['post.destroy', $post->id],
+                        'method' => 'DELETE'
+                        ]) !!}
+
+                        {!! Form::submit('Supprimer', ['class' => 'btn btn-danger']) !!}
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

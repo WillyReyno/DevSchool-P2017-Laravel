@@ -98,6 +98,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        // Doit supprimer un article spécifique
+        $post = Post::findOrFail($id);
+
+        $post->delete();
+
+        return redirect()->route('post.index');
     }
 }
