@@ -13,17 +13,19 @@
                         <br>
                         <em>Auteur : {{ $post->user->name }} </em>
 
-                        <br>
-                        <a href="{{ route('post.edit', $post->id) }}" class="btn btn-success">Modifier</a>
+                        @if(Auth::check())
+                            <br>
+                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-success">Modifier</a>
 
-                        {!! Form::model($post, [
-                        'route' => ['post.destroy', $post->id],
-                        'method' => 'DELETE'
-                        ]) !!}
+                            {!! Form::model($post, [
+                            'route' => ['post.destroy', $post->id],
+                            'method' => 'DELETE'
+                            ]) !!}
 
-                        {!! Form::submit('Supprimer', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::submit('Supprimer', ['class' => 'btn btn-danger']) !!}
 
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        @endif
                     </div>
                 </div>
             </div>
