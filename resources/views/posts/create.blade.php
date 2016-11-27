@@ -20,7 +20,7 @@
                         ['class' => 'form-control', 'placeholder' => 'Contenu']) !!}
 
                         <br>
-                        {!! Form::submit('Envoyer', ['class' => 'btn btn-info']) !!}
+                        {!! Form::submit('Publier', ['class' => 'btn btn-info']) !!}
 
                         {!! Form::close() !!}
                     </div>
