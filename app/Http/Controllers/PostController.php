@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,8 +15,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        // Doit retourner la liste des articles
-
         $list = Post::paginate(10);
 
         return view('posts.index', compact('list'));
@@ -51,8 +50,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        // Doit retourner la page d'un article spécifique
-        return view('posts.show');
+        $post = Post::findOrFail($id);
+
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -63,8 +63,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        // Doit retourner le formulaire d'édition d'un article spécifique
-        return view('posts.edit');
+        $post = Post::findOrFail($id);
+
+        return view('posts.edit', compact('post'));
     }
 
     /**

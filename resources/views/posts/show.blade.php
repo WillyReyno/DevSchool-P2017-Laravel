@@ -5,10 +5,13 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Article</div>
+                    <div class="panel-heading">{{ $post->title }}</div>
 
                     <div class="panel-body">
-                        Afficher un article
+                        {{ $post->content }}
+
+                        <br>
+                        <em>Auteur : {{ $post->user->name }} </em>
                     </div>
                 </div>
             </div>
