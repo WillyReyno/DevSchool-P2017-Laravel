@@ -20,3 +20,7 @@ Auth::routes();
 Route::resource('/post', 'PostController');
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/hello', function() {
+    return 'Coucou';
+})->middleware('isadmin');
