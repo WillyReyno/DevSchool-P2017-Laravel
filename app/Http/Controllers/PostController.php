@@ -14,6 +14,7 @@ class PostController extends Controller
     public function index()
     {
         // Doit retourner la liste des articles
+        return view('posts.index');
     }
 
     /**
@@ -24,6 +25,7 @@ class PostController extends Controller
     public function create()
     {
         // Doit retourner le formulaire de création des articles
+        return view('posts.create');
     }
 
     /**
@@ -46,6 +48,7 @@ class PostController extends Controller
     public function show($id)
     {
         // Doit retourner la page d'un article spécifique
+        return view('posts.show');
     }
 
     /**
@@ -57,6 +60,7 @@ class PostController extends Controller
     public function edit($id)
     {
         // Doit retourner le formulaire d'édition d'un article spécifique
+        return view('posts.edit');
     }
 
     /**
