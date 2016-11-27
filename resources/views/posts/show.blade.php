@@ -13,7 +13,7 @@
                         <br>
                         <em>Auteur : {{ $post->user->name }} </em>
 
-                        @if(Auth::check())
+                        @if(Auth::check() && Auth::user()->isAdmin)
                             <br>
                             <a href="{{ route('post.edit', $post->id) }}" class="btn btn-success">Modifier</a>
 
