@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         // Doit retourner la liste des articles
 
-        $list = Post::all();
+        $list = Post::paginate(10);
 
         return view('posts.index', compact('list'));
     }

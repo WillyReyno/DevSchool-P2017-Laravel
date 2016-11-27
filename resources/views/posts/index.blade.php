@@ -14,6 +14,8 @@
                             </h2>
                             <p>{{ $post->content }}</p>
                         @endforeach
+
+                        {!! $list->links() !!}
                     </div>
                 </div>
             </div>
