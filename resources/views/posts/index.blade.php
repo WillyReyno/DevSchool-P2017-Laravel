@@ -9,7 +9,10 @@
 
                     <div class="panel-body">
                         @foreach($list as $post)
-                            <h2>{{ $post->title }}</h2>
+                            <h2>
+                                <a href="{{ route('post.show', $post->id) }}">{{ $post->title }}</a>
+                            </h2>
+                            <p>{{ $post->content }}</p>
                         @endforeach
                     </div>
                 </div>
