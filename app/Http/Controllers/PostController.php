@@ -34,11 +34,24 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $this->validate($request,
+            [
+                'title' => 'required|min:5',
+                'content' => 'required|min:10'
+            ],
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Le titre doit contenir au moins 5 caractères',
+
+                'content.required' => 'Contenu requis',
+                'content.min' => 'L\'article doit contenir au moins 10 caractères'
+            ]);
+
         $post = new Post;
         $input = $request->input();
         $input['user_id'] = Auth::user()->id;
@@ -51,7 +64,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,7 +77,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -77,12 +90,25 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,
+            [
+                'title' => 'required|min:5',
+                'content' => 'required|min:10'
+            ],
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Le titre doit contenir au moins 5 caractères',
+
+                'content.required' => 'Contenu requis',
+                'content.min' => 'L\'article doit contenir au moins 10 caractères'
+            ]);
+
         $post = Post::findOrFail($id);
         $input = $request->input();
         $post->fill($input)->save();
@@ -93,7 +119,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
