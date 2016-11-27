@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    Liste des articles
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Liste des articles</div>
+
+                    <div class="panel-body">
+                        Liste des articles
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
