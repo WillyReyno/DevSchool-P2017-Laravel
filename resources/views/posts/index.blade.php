@@ -8,7 +8,9 @@
                     <div class="panel-heading">Liste des articles</div>
 
                     <div class="panel-body">
-                        Liste des articles
+                        @foreach($list as $post)
+                            <h2>{{ $post->title }}</h2>
+                        @endforeach
                     </div>
                 </div>
             </div>
